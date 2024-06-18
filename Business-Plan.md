@@ -52,6 +52,7 @@ Potenzial für neue Spielmodi und soziale Funktionen.
 #### Partnerschaften:
 Kooperationen mit API-Bereitsteller zur Erweiterung der Musiksammlung.
 
+
 ## Marketing
 
 ## Projektplanung
