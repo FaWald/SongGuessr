@@ -51,8 +51,6 @@ Sicherstellung der YouTube-Music-API für die Nutzung in der App.
 Potenzial für neue Spielmodi und soziale Funktionen.
 #### Partnerschaften:
 Kooperationen mit API-Bereitsteller zur Erweiterung der Musiksammlung.
-
-
 ## Marketing
 
 ## Projektplanung
