@@ -11,6 +11,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.config.Customizer;
 
+/**
+ * The WebSecurityConfiguration class configures the security settings for the application.
+ * It sets up authentication, authorization, and other security-related configurations.
+ */
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfiguration {
