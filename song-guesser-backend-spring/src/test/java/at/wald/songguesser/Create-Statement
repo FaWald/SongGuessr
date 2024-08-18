@@ -1,0 +1,15 @@
+-- H2 Database Schema for User entity
+
+-- Create the "users" table
+CREATE TABLE users (
+    id BIGINT PRIMARY KEY, -- Primary key, corresponds to the "id" field in the entity
+    username VARCHAR(255) NOT NULL, -- Corresponds to the "username" field in the entity
+    password VARCHAR(255) NOT NULL, -- Corresponds to the "password" field in the entity
+    role VARCHAR(255) NOT NULL -- Corresponds to the "role" field in the entity
+);
+
+-- Insert sample data into the "users" table
+INSERT INTO users (id, username, password, role) VALUES
+(1, 'user1', 'password1', 'ROLE_USER'),
+(2, 'admin', 'password2', 'ROLE_ADMIN'),
+(3, 'user2', 'password3', 'ROLE_USER');

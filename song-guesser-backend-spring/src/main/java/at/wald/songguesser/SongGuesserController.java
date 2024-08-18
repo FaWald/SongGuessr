@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.*;
 
 public class SongGuesserController {
 
-    @GetMapping("/home")
+    @GetMapping({"/", "/home"})
     public String home(){
-        return "This is HomePage";
+        return "This is home";
     }
 
     @GetMapping("/admin")

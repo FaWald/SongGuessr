@@ -21,10 +21,19 @@ public class WebSecurityConfiguration {
 
     private final UserDetailsService userDetailsService;
 
+    /**
+     * Constructs a new {@code WebSecurityConfiguration} with the provided {@link UserDetailsService}.
+     * @param userDetailsService the service to load user-specific data
+     */
     public WebSecurityConfiguration(UserDetailsService userDetailsService) {
         this.userDetailsService = userDetailsService;
     }
 
+    /**
+     * Creates and configures an {@link AuthenticationProvider} bean that uses a {@link DaoAuthenticationProvider}
+     * to authenticate users with a {@link UserDetailsService} and a {@link BCryptPasswordEncoder}.
+     * @return the configured {@link AuthenticationProvider} bean
+     */
     @Bean
     public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
@@ -33,6 +42,16 @@ public class WebSecurityConfiguration {
         return provider;
     }
 
+    /**
+     * Configures the security filter chain for the application. Specifies which URL paths are publicly accessible,
+     * which require authentication, and which require specific authorities.
+     *
+     * <p>Configures HTTP Basic Authentication using the default settings.
+     *
+     * @param http the {@link HttpSecurity} to modify
+     * @return the {@link SecurityFilterChain} bean that defines the application's security configuration
+     * @throws Exception if an error occurs while configuring the security settings
+     */
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(authorizeRequests ->
@@ -40,7 +59,7 @@ public class WebSecurityConfiguration {
                                 .requestMatchers("/").permitAll()
                                 .requestMatchers("/home").permitAll()
                                 .requestMatchers("/admin").hasAuthority("ADMIN")
-                                .anyRequest().authenticated()
+                                .anyRequest().permitAll()
                 )
                 .httpBasic(Customizer.withDefaults());  // Updated to use the new method
 
